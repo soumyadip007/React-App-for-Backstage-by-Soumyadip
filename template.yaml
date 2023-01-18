@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: react-app-scaffolding
   title: React App Scaffolding
-  description: Create a new React website project
+  description: Scaffolding for the basic React App. It has SPAship installed as the dev dependency with the deployment process.
   tags:
     - react
     - vite
