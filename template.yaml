@@ -6,9 +6,10 @@ metadata:
   description: Create a new CRA website project
   tags:
     - react
-    - cra
+    - spaship
+    - template
 spec:
-  owner: soumyadip.note@gmail.com
+  owner: spaship-dev
   type: website
   parameters:
     - title: Provide some simple information
