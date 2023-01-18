@@ -1,5 +1,5 @@
 {
-  "name": "create-react-app",
+  "name": "${{values.spa_name}}",
   "private": true,
   "version": "0.0.0",
   "type": "module",
