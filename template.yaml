@@ -1,11 +1,12 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: create-react-app-template
-  title: Create React App Template
-  description: Create a new CRA website project
+  name: react-app-scaffolding
+  title: React App Scaffolding
+  description: Create a new React website project
   tags:
     - react
+    - vite
     - spaship
     - template
 spec:
@@ -47,7 +48,7 @@ spec:
               - github.com
   steps:
     - id: template
-      name: Create React App
+      name: React App Scaffolding
       action: fetch:template
       input:
         url: ./skeleton
