@@ -1,40 +1,35 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: react-app-scaffolding
-  title: React App Scaffolding
-  description: Scaffolding for the basic React App. It has SPAship installed as the dev dependency with the deployment process.
+  name: react-app-scaffolding-for-github
+  title: React App Scaffolding for Github
+  description: Scaffolding for the basic React App. It has SPAship installed as the dev dependency with the deployment process and the Github CI with. You can directly run the CI for deployment or run that locally for testing.
   tags:
     - react
     - vite
     - spaship
+    - github
+    - ci
     - template
 spec:
   owner: spaship-dev
   type: website
   parameters:
-    - title: Provide some simple information
+    - title: Provide the informations for your Application
       required:
-        - component_id
-        - owner
+        - spa_name
+        - spa_path
       properties:
-        component_id:
-          title: Name
+        spa_name:
+          title: Your Application Name
           type: string
-          description: Unique name of the component
+          description: Application name [eg. test, home, index]
           ui:field: EntityNamePicker
-        description:
-          title: Description
+        spa_path:
+          title: Your Application Path
           type: string
-          description: Help others understand what this website is for.
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
+          description: Application path [eg. /, /home, /index]
+          ui:field: EntityNamePicker
     - title: Choose a location
       required:
         - repoUrl
@@ -59,7 +54,6 @@ spec:
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           owner: ${{ parameters.owner }}
-
     - id: publish
       name: Publish
       action: publish:github
@@ -68,7 +62,6 @@ spec:
           - github.com
         description: This is ${{ parameters.component_id }}
         repoUrl: ${{ parameters.repoUrl }}
-
     - id: register
       name: Register
       action: catalog:register
