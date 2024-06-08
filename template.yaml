@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: react-app-scaffolding-for-github
-  title: SPAship - React App Scaffolding for Github
+  title: DevConf - React App Scaffolding for Github
   description: Scaffolding for the basic React App. It has SPAship installed as the dev dependency with the deployment process and the Github CI with. You can directly run the CI for deployment or run that locally for testing.
   tags:
     - react
