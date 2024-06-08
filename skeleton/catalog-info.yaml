@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-react-app
+  description: A React application for Backstage by Soumyadip
+  owner: soumyadip
+spec:
+  type: website
+  lifecycle: production
+  owner: soumyadip
+  system: my-system
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: my-react-app-api
+  description: API for my React application
+spec:
+  type: openapi
+  lifecycle: production
+  owner: soumyadip
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: My React App API
+      version: 1.0.0
+    paths:
+      /:
+        get:
+          summary: Home route
+          responses:
+            '200':
+              description: OK
