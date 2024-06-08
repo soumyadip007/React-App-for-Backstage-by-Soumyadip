@@ -12,7 +12,7 @@ metadata:
     - ci
     - template
 spec:
-  owner: spaship-dev
+  owner: Soumyadip Chowdhury
   type: website
   parameters:
     - title: Provide the informations for your Application
